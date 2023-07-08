@@ -22,10 +22,12 @@
 		<!-- Dialect required between hibernate and MySQL -->
 		<!-- This property makes Hibernate generate the
 			appropriate SQL for MySQL here -->
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		<property name="hbm2ddl.auto">update </property>
+		
+		<mapping class="io.github.pappuraj.HibernatePractice.Services"/>
 		
 
 	</session-factory>
