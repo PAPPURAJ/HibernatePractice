@@ -16,8 +16,12 @@
 		
 <!-- 		<mapping class="io.github.pappuraj.HibernatePractice.Services"/>
 		<mapping class="io.github.pappuraj.HibernatePractice.EmployeeList"/> -->
-		<mapping class="io.github.pappuraj.onetoone.Question"/>
-		<mapping class="io.github.pappuraj.onetoone.Answer"/>
+<!-- 		<mapping class="io.github.pappuraj.onetoone.Question"/>
+		<mapping class="io.github.pappuraj.onetoone.Answer"/> -->
+		
+		<mapping class="io.github.pappuraj.onetomany.Question"/>
+		<mapping class="io.github.pappuraj.onetomany.Answer"/>
+		
 		
 
 	</session-factory>
