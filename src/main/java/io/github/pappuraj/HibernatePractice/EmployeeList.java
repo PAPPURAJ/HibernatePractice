@@ -27,15 +27,17 @@ public class EmployeeList {
 	private Date dateOfBirth;
 	@Lob
 	private byte[] picture;
+	private Services services;
 	public EmployeeList() {
 		super();
 	}
-	public EmployeeList(String name, String phoneNumber, Date dateOfBirth, byte[] picture) {
+	public EmployeeList(String name, String phoneNumber, Date dateOfBirth, byte[] picture,Services services) {
 		super();
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.dateOfBirth = dateOfBirth;
 		this.picture = picture;
+		this.services=services;
 	}
 	public int getEmployeeId() {
 		return employeeId;

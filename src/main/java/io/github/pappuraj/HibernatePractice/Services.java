@@ -1,14 +1,18 @@
 package io.github.pappuraj.HibernatePractice;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+
+@Embeddable
 public class Services {
-	@Id
-	@GeneratedValue
-	private int id;
+//	@Id
+//	@GeneratedValue
+//	private int id;
+	@Column(name = "service_name")
 	private String name;
 	private String price;
 	public Services() {
@@ -19,12 +23,12 @@ public class Services {
 		this.name = name;
 		this.price = price;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+//	public int getId() {
+//		return id;
+//	}
+//	public void setId(int id) {
+//		this.id = id;
+//	}
 	public String getName() {
 		return name;
 	}
@@ -39,7 +43,7 @@ public class Services {
 	}
 	@Override
 	public String toString() {
-		return "Services [id=" + id + ", name=" + name + ", price=" + price + "]";
+		return "Services [ name=" + name + ", price=" + price + "]";
 	}
 	
 

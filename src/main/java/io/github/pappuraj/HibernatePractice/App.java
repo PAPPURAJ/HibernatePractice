@@ -34,8 +34,8 @@ public class App
     	
     	
     	
-    	session.save(new Services("Money Ld","300000"));
-    	session.save(new EmployeeList("Pappuraj","01832755401",new Date(),data));
+    	//session.save(new Services("Money Ld","300000"));
+    	session.save(new EmployeeList("Pappuraj","01832755401",new Date(),data,new Services("Money Ld","300000")));
     	session.getTransaction().commit();
     	
     	System.out.println((EmployeeList)session.get(EmployeeList.class, 0));
