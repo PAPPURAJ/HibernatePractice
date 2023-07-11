@@ -22,10 +22,11 @@ public class OneToManyMain {
 		list.add(new Answer(21,"His hometown in chittagong"));
 		list.add(new Answer(22,"Graduated from DUET"));
 		
-		for(Answer ans:list) session.save(ans);
+		//for(Answer ans:list) session.save(ans); 
+		// no need to save ans manually. It save automatically using Cascading
 		
 		session.save(new Question(15,"Who is pappuraj?",list));
-		//session.save(list);
+
 		
 		session.getTransaction().commit(); 
 		

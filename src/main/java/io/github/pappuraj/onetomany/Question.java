@@ -2,6 +2,7 @@ package io.github.pappuraj.onetomany;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +15,7 @@ public class Question {
 	@Id
 	private int id;
 	private String question;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Answer> list;
 	public Question() {
 		super();
