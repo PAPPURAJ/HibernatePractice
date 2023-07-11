@@ -13,16 +13,16 @@
 		<property name="show_sql">true</property>
 		<!-- <property name="format_sql">true</property> -->
 		<property name="hbm2ddl.auto">create</property>
-		
-<!-- 		<mapping class="io.github.pappuraj.HibernatePractice.Services"/>
-		<mapping class="io.github.pappuraj.HibernatePractice.EmployeeList"/> -->
-<!-- 		<mapping class="io.github.pappuraj.onetoone.Question"/>
-		<mapping class="io.github.pappuraj.onetoone.Answer"/> -->
-		
-		<mapping class="io.github.pappuraj.onetomany.Question"/>
-		<mapping class="io.github.pappuraj.onetomany.Answer"/>
-		
-		
+
+		<!-- <mapping class="io.github.pappuraj.HibernatePractice.Services"/> <mapping 
+			class="io.github.pappuraj.HibernatePractice.EmployeeList"/> -->
+		<!-- <mapping class="io.github.pappuraj.onetoone.Question"/> <mapping class="io.github.pappuraj.onetoone.Answer"/> -->
+
+		<!-- <mapping class="io.github.pappuraj.onetomany.Question"/> <mapping 
+			class="io.github.pappuraj.onetomany.Answer"/> -->
+
+		<mapping class="io.github.pappuraj.manytomany.Course" />
+		<mapping class="io.github.pappuraj.manytomany.Student" />
 
 	</session-factory>
 </hibernate-configuration>
