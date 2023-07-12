@@ -27,7 +27,7 @@
 		<property name="format_sql">true</property>
 		<property name="hbm2ddl.auto">update </property>
 		
-		<mapping class="io.github.pappuraj.HibernatePractice.Services"/>
+		<mapping class="io.github.pappuraj.Hibernate.HQL.Services"/>
 		
 
 	</session-factory>

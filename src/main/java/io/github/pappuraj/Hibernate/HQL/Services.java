@@ -1,20 +1,21 @@
-package io.github.pappuraj.HibernatePractice;
+package io.github.pappuraj.Hibernate.HQL;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Services {
 	@Id
+	@GeneratedValue
 	private int id;
 	private String name;
 	private String price;
 	public Services() {
 		super();
 	}
-	public Services(int id, String name, String price) {
+	public Services(String name, String price) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.price = price;
 	}

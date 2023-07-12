@@ -1,14 +1,14 @@
-package io.github.pappuraj.HibernatePractice;
-
+package io.github.pappuraj.Hibernate.HQL;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class UpdateMain 
 {
     public static void main( String[] args )
     {
@@ -20,12 +20,22 @@ public class App
     	Session session=factory.openSession();
     	session.beginTransaction();
     	
-    	session.save(new Services(112,"Money Ld","300000"));
+    	//Query c = session.createQuery("from Services where id=:a and price=:b");
+    	Query c = session.createQuery("update Services set price=:a where id=:b");
+    	
+    	c.setParameter("a", "1234");
+    	c.setParameter("b", 20);
+    	c.executeUpdate();
+    	
     	session.getTransaction().commit();
+    
+    	
+    	
+    	
     	
     	session.close();
+    	factory.close();
     	
     	
-        System.out.println( factory.isOpen() );
     }
 }
