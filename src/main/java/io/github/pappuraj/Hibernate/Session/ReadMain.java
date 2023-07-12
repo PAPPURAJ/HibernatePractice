@@ -1,4 +1,4 @@
-package io.github.pappuraj.Hibernate.NativeSQL;
+package io.github.pappuraj.Hibernate.Session;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,20 +25,19 @@ public class ReadMain
     	SessionFactory factory=cfg.buildSessionFactory();
     	
     	Session session=factory.openSession();
+    	
     	session.beginTransaction();
-
-
-    	NativeQuery c = session.createSQLQuery("SELECT * from services");
-
-    	List<Object[]> ob= c.list();
-    	
-    	for(Object[] s:ob)
-    		//System.out.println(Arrays.deepToString(s));
-    		System.out.println(s[0]+" : "+s[1]);
-    	
-    	
-    	
+    	Services s=session.get(Services.class, 0);
+    	System.out.println(s);
     	session.close();
+    	
+    	Session session1=factory.openSession();
+    	session1.beginTransaction();
+    	Services s2=session1.get(Services.class, 0);
+    	System.out.println(s2);
+    	session1.close();
+    	
+    	factory.close();
     	
     	
     }
