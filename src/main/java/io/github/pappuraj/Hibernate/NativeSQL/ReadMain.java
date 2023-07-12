@@ -1,11 +1,15 @@
-package io.github.pappuraj.Hibernate.HQL;
+package io.github.pappuraj.Hibernate.NativeSQL;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
+
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Array;
 
 /**
  * Hello world!
@@ -22,16 +26,15 @@ public class ReadMain
     	
     	Session session=factory.openSession();
     	session.beginTransaction();
+
+
+    	NativeQuery c = session.createSQLQuery("SELECT * from services");
+
+    	List<Object[]> ob= c.list();
     	
-    	session.save(new Services("Money Ld","300000"));
-    	session.getTransaction().commit();
-    	
-    	//Query c = session.createQuery("from Services where id=:a and price=:b");
-    	Query c = session.createQuery("from Services as s where s.id=:a and s.price=:b");
-    	c.setParameter("a", 0);
-    	c.setParameter("b", "300000");
-    	List<Services> list=c.list();
-    	for(Services s:list)System.out.println(s);
+    	for(Object[] s:ob)
+    		//System.out.println(Arrays.deepToString(s));
+    		System.out.println(s[0]+" : "+s[1]);
     	
     	
     	

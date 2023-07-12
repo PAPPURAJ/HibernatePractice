@@ -1,4 +1,4 @@
-package io.github.pappuraj.Hibernate.HQL;
+package io.github.pappuraj.Hibernate.NativeSQL;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
