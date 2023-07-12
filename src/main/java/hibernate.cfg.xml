@@ -5,29 +5,17 @@
 <!-- Main configuration file -->
 <hibernate-configuration>
 	<session-factory>
-		<!-- As we are connecting MySQL, com.mysql.jdbc.
-			Driver is required(JDBC driver class) -->
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		
-		<!-- Here geeksforgeeks is the name of the database
-			that we are connecting(JDBC URL) -->
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/p2m</property>
-		
-		<!-- Username to connect to MySQL -->
 		<property name="hibernate.connection.username">root</property>
-		
-		<!-- Password to connect to MySQL, Provide your correct password -->
 		<property name="hibernate.connection.password">....</property>
-		
-		<!-- Dialect required between hibernate and MySQL -->
-		<!-- This property makes Hibernate generate the
-			appropriate SQL for MySQL here -->
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create</property>
 		
-		<mapping class="io.github.pappuraj.hibernate.restriction.Student"/>
+		<mapping class="io.github.pappuraj.hibernate.onetoone.Student"/>
+		<mapping class="io.github.pappuraj.hibernate.onetoone.Teacher"/>
 		
 
 	</session-factory>
