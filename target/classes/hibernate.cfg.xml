@@ -18,8 +18,12 @@
 		<property name="format_sql">true</property>
 		<property name="hbm2ddl.auto">update </property>
 
+<!-- 		<mapping
+			class="io.github.pappuraj.Hibernate.XMLMapping.Student" /> -->
+			
 		<mapping
-			class="io.github.pappuraj.Hibernate.Session.Services" />
+			resource="io/github/pappuraj/XMLMapping/Student.hbm.xml" />
+			
 
 
 	</session-factory>
